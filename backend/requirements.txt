@@ -3,7 +3,6 @@ uvicorn
 numpy
 pandas
 scikit-learn
-sentence-transformers
 rank-bm25
 joblib
 python-dotenv
