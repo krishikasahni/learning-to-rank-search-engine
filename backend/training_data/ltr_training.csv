@@ -1,0 +1,16 @@
+query,title,semantic_score,bm25_score,click_score,relevance
+deep learning,Deep Learning Retrieval,0.95,0.84,0.90,4
+deep learning,Learning to Rank Models,0.71,0.66,0.62,2
+deep learning,FastAPI Backend Development,0.40,0.45,0.30,1
+ranking models,Learning to Rank Models,0.93,0.88,0.91,4
+ranking models,Neural Search Systems,0.81,0.70,0.77,3
+ranking models,Vector Databases,0.50,0.44,0.39,1
+semantic search,Neural Search Systems,0.94,0.86,0.88,4
+semantic search,Vector Databases,0.87,0.80,0.75,3
+semantic search,FastAPI Backend Development,0.38,0.40,0.29,1
+fastapi backend,FastAPI Backend Development,0.97,0.90,0.92,4
+fastapi backend,Learning to Rank Models,0.44,0.50,0.41,1
+transformers,Deep Learning Retrieval,0.96,0.82,0.89,4
+transformers,Neural Search Systems,0.88,0.76,0.81,3
+vector database,Vector Databases,0.98,0.91,0.94,4
+vector database,Neural Search Systems,0.73,0.67,0.61,2

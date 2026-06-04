@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+elasticsearch
+lightgbm
+numpy
+pandas
+scikit-learn
+sentence-transformers
+motor
+python-dotenv
+joblib
+rank-bm25

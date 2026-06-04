@@ -1,0 +1,9 @@
+query,doc_id,bm25_score,semantic_score,hybrid_score,content_length,relevance
+machine learning,1,2.5,0.91,2.12,120,3
+machine learning,2,1.8,0.72,1.47,95,2
+machine learning,3,0.9,0.31,0.72,80,0
+ranking,2,3.1,0.88,2.43,95,3
+ranking,3,2.2,0.52,1.69,80,2
+ranking,1,1.0,0.40,0.82,120,1
+transformers,4,3.5,0.97,2.74,110,3
+transformers,1,1.2,0.43,0.97,120,1

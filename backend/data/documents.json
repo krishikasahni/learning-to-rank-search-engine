@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Deep Learning Basics",
+    "content": "Deep learning uses neural networks for AI applications."
+  },
+  {
+    "id": 2,
+    "title": "FastAPI Backend Development",
+    "content": "FastAPI is used for building machine learning APIs."
+  },
+  {
+    "id": 3,
+    "title": "Learning to Rank Models",
+    "content": "LTR models improve search engine ranking quality."
+  },
+  {
+    "id": 4,
+    "title": "Semantic Search Systems",
+    "content": "Semantic search understands query meaning using embeddings."
+  },
+  {
+    "id": 5,
+    "title": "Elasticsearch BM25 Ranking",
+    "content": "BM25 ranking is widely used in information retrieval."
+  }
+]
