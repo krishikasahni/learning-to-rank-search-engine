@@ -42,19 +42,23 @@ The final ranking score is generated using a hybrid approach that combines all s
 
 ### Home Page
 
-![Home](screenshots/home.png)
+<img width="1440" height="900" alt="screenshots:home" src="https://github.com/user-attachments/assets/d90e1b30-8e85-420d-9ed9-fd774b08ee62" />
 
 ### Search Results
 
-![Search Results](screenshots/search-results.png)
+<img width="1440" height="900" alt="screenshots:search-results" src="https://github.com/user-attachments/assets/79b8c512-3590-4db5-8d07-b69ee90b356e" />
+
+<img width="1440" height="900" alt="Screenshot 2026-06-04 at 7 38 46 PM" src="https://github.com/user-attachments/assets/afa171cd-3fb9-4a43-9dcd-7a86c72c2370" />
 
 ### Analytics Dashboard
 
-![Analytics](screenshots/analytics.png)
+<img width="1440" height="900" alt="screenshots:analytics" src="https://github.com/user-attachments/assets/c68f9f18-86bd-49d5-9b6e-de1649de99be" />
+
+<img width="1440" height="900" alt="Screenshot 2026-06-04 at 7 39 44 PM" src="https://github.com/user-attachments/assets/78703f5c-0480-446e-91fc-4ba1fb0f30b9" />
 
 ### API Documentation
 
-![API Docs](screenshots/api-docs.png)
+<img width="1440" height="900" alt="screenshots:api-docs" src="https://github.com/user-attachments/assets/1205546b-1f4e-4fe5-ab56-a196368f71a7" />
 
 ## Hybrid Ranking Formula
 
