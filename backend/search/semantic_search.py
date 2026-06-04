@@ -5,12 +5,23 @@ client = chromadb.PersistentClient(path="./chroma_db")
 
 collection = client.get_collection("documents")
 
-model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
+model = None
+
+
+def get_model():
+    global model
+
+    if model is None:
+        model = SentenceTransformer(
+            "sentence-transformers/all-MiniLM-L6-v2"
+        )
+
+    return model
 
 
 def semantic_search(query, top_k=5):
+
+    model = get_model()
 
     embedding = model.encode(query).tolist()
 
@@ -30,7 +41,6 @@ def semantic_search(query, top_k=5):
         distances,
         metadatas
     ):
-
         output.append({
             "title": meta["title"],
             "content": doc,
