@@ -8,7 +8,7 @@ export default function Home() {
 
   const handleSearch = async () => {
     const response = await axios.get(
-      `http://localhost:8000/search/?query=${query}`
+      `https://learning-to-rank-search-engine.onrender.com/search/?query=${query}`
     )
 
     setResults(response.data.results)

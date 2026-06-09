@@ -6,6 +6,11 @@ from ranking.ml_ranker import predict_rank_score
 
 def hybrid_rank(query):
 
+    from search.semantic_search import semantic_search
+
+    semantic_results = semantic_search(query)
+    bm25_results = bm25_search(query)
+
     bm25_results = bm25_search(query)
 
     ranked_results = []
