@@ -1,9 +1,17 @@
 from sentence_transformers import SentenceTransformer
 import chromadb
 
-client = chromadb.PersistentClient(path="./chroma_db")
+collection = None
 
-collection = client.get_collection("documents")
+
+def get_collection():
+    global collection
+
+    if collection is None:
+        client = chromadb.PersistentClient(path="./chroma_db")
+        collection = client.get_collection("documents")
+
+    return collection
 
 model = None
 
@@ -20,6 +28,7 @@ def get_model():
 
 def semantic_search(query, top_k=5):
 
+    collection = get_collection()
     model= get_model()
     embedding = model.encode(query).tolist()
 
