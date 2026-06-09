@@ -7,7 +7,7 @@ const [results, setResults] = useState([]);
 const [suggestions, setSuggestions] = useState([]);
 const [loading, setLoading] = useState(false);
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://learning-to-rank-search-engine.onrender.com";
 
 const fetchSuggestions = async (value) => {
 if (!value) {

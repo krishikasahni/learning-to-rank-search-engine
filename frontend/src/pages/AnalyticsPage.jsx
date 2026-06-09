@@ -16,7 +16,7 @@ top_queries: {},
 top_clicked_docs: {},
 });
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://learning-to-rank-search-engine.onrender.com";
 
 useEffect(() => {
 fetch(`${API_URL}/analytics`)
