@@ -13,8 +13,7 @@ def get_model():
 
     if model is None:
         model = SentenceTransformer(
-            "sentence-transformers/all-MiniLM-L6-v2"
-        )
+            'all-MiniLM-L6-v2')
 
     return model
 
