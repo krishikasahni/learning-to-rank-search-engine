@@ -44,7 +44,9 @@ print("STEP 10")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173",
+    "https://learning-to-rank-search-engine.vercel.app"
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -83,9 +85,14 @@ print("STEP 15")
 
 @app.post("/search")
 def search(request: SearchRequest):
+
+    print("SEARCH REQUEST:", request.query)
+
     log_query(request.query)
+    print("LOGGED QUERY")
 
     results = hybrid_rank(request.query)
+    print("HYBRID RANK COMPLETE")
 
     return {"results": results}
 
