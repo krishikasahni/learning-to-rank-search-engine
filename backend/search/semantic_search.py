@@ -20,9 +20,7 @@ def get_model():
 
 def semantic_search(query, top_k=5):
 
-    model = get_model()
-
-    embedding = model.encode(query).tolist()
+    embedding = get_model().encode(query).tolist()
 
     results = collection.query(
         query_embeddings=[embedding],
