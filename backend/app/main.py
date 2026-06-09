@@ -77,7 +77,7 @@ def home():
 
 print("STEP 14")
 
-from semantic.semantic_search import semantic_search
+#from semantic.semantic_search import semantic_search
 
 print("STEP 15")
 
