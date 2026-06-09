@@ -4,11 +4,11 @@ from analytics.dashboard import (
 )
 from analytics.logger import log_query
 from ranking.hybrid_ranker import hybrid_rank
-from search.semantic_search import semantic_search
+#from search.semantic_search import semantic_search
 from analytics.stats import get_analytics
 from feedback.feedback import save_feedback
 from search.autocomplete import get_suggestions
-from vector_db.vector_search import vector_search
+#from vector_db.vector_search import vector_search
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
