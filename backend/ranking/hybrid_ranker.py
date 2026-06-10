@@ -9,9 +9,10 @@ def hybrid_rank(query):
     from search.semantic_search import semantic_search
 
     semantic_results = semantic_search(query)
-    bm25_results = bm25_search(query)
+    print("SEMANTIC DONE")
 
     bm25_results = bm25_search(query)
+    print("BM25 DONE")
 
     ranked_results = []
 
