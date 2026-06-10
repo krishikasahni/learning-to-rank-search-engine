@@ -67,8 +67,10 @@ try {
 
   const data = await response.json();
 
-  setResults(data.results || []);
-  setSuggestions([]);
+  console.log("FULL RESPONSE:", data);
+  console.log("RESULTS:", data.results);
+
+  setResults(data.results || []);  setSuggestions([]);
 } catch (error) {
   console.error(error);
   alert("Backend connection failed");
