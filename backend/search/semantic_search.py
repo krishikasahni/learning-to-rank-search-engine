@@ -43,26 +43,26 @@ def get_model():
 
 def semantic_search(query, top_k=5):
 
-    print("SEMANTIC SEARCH START")
+    print("STEP A: GET COLLECTION")
 
     collection = get_collection()
 
-    print("COLLECTION LOADED")
+    print("STEP B: LOAD MODEL")
 
     model = get_model()
 
-    print("MODEL LOADED")
+    print("STEP C: ENCODE QUERY")
 
     embedding = model.encode(query).tolist()
 
-    print("EMBEDDING CREATED")
+    print("STEP D: QUERY CHROMA")
 
     results = collection.query(
         query_embeddings=[embedding],
         n_results=top_k
     )
 
-    print("CHROMA QUERY COMPLETE")
+    print("STEP E: CHROMA SUCCESS")
 
     output = []
 
@@ -70,22 +70,18 @@ def semantic_search(query, top_k=5):
     distances = results["distances"][0]
     metadatas = results["metadatas"][0]
 
-    print(f"DOCS FOUND: {len(docs)}")
-
     for doc, distance, meta in zip(
         docs,
         distances,
         metadatas
     ):
         output.append({
-            "title": meta.get("title", "Unknown"),
+            "title": meta.get("title", "No Title"),
             "content": doc,
             "semantic_score": round(
                 1 - distance,
                 4
             )
         })
-
-    print("SEMANTIC SEARCH COMPLETE")
 
     return output
