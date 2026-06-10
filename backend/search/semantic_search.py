@@ -1,68 +1,50 @@
 from sentence_transformers import SentenceTransformer
 import chromadb
 
-collection = None
 model = None
-
-
-def get_collection():
-    global collection
-
-    if collection is None:
-        print("CONNECTING TO CHROMADB")
-
-        client = chromadb.PersistentClient(
-            path="./chroma_db"
-        )
-
-        print("GETTING COLLECTION")
-
-        collection = client.get_collection(
-            "documents"
-        )
-
-        print("COLLECTION READY")
-
-    return collection
+collection = None
 
 
 def get_model():
     global model
 
     if model is None:
-        print("LOADING SENTENCE TRANSFORMER")
-
-        model = SentenceTransformer(
-            "all-MiniLM-L6-v2"
-        )
-
-        print("MODEL READY")
+        print("Loading model...")
+        model = SentenceTransformer("all-MiniLM-L6-v2")
 
     return model
 
 
+def get_collection():
+    global collection
+
+    if collection is None:
+        print("Loading Chroma...")
+        client = chromadb.PersistentClient(path="./chroma_db")
+        collection = client.get_collection("documents")
+
+    return collection
+
+
 def semantic_search(query, top_k=5):
 
-    print("STEP A: GET COLLECTION")
-
-    collection = get_collection()
-
-    print("STEP B: LOAD MODEL")
-
+    print("LOADING MODEL")
     model = get_model()
 
-    print("STEP C: ENCODE QUERY")
+    print("LOADING COLLECTION")
+    collection = get_collection()
 
+    print("ENCODING QUERY")
     embedding = model.encode(query).tolist()
 
-    print("STEP D: QUERY CHROMA")
+    print("QUERYING CHROMA")
 
     results = collection.query(
         query_embeddings=[embedding],
         n_results=top_k
     )
 
-    print("STEP E: CHROMA SUCCESS")
+    print("CHROMA SUCCESS")
 
     output = []
 
@@ -76,7 +58,7 @@ def semantic_search(query, top_k=5):
         metadatas
     ):
         output.append({
-            "title": meta.get("title", "No Title"),
+            "title": meta["title"],
             "content": doc,
             "semantic_score": round(
                 1 - distance,
