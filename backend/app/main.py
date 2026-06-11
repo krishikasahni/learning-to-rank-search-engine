@@ -90,6 +90,7 @@ def search(request: SearchRequest):
     print("LOGGED QUERY")
 
     results = hybrid_rank(request.query)
+
     print("HYBRID RANK COMPLETE")
 
     return {"results": results}

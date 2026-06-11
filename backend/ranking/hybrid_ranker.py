@@ -6,14 +6,16 @@ from ranking.ml_ranker import predict_rank_score
 
 def hybrid_rank(query):
 
+    print("ENTERED HYBRID")
+
     from search.semantic_search import semantic_search
 
-    print("BEFORE SEMANTIC")
+    semantic_results = semantic_search(query)
 
-    semantic_results = []
+    print("SEMANTIC DONE")
 
-    print("SEMANTIC SKIPPED")
     bm25_results = bm25_search(query)
+
     print("BM25 DONE")
 
     ranked_results = []
