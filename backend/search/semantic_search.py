@@ -28,23 +28,26 @@ def get_collection():
 
 def semantic_search(query, top_k=5):
 
-    print("LOADING MODEL")
-    model = get_model()
+    print("STEP A")
 
-    print("LOADING COLLECTION")
     collection = get_collection()
 
-    print("ENCODING QUERY")
+    print("STEP B")
+
+    model = get_model()
+
+    print("STEP C")
+
     embedding = model.encode(query).tolist()
 
-    print("QUERYING CHROMA")
+    print("STEP D")
 
     results = collection.query(
         query_embeddings=[embedding],
         n_results=top_k
     )
 
-    print("CHROMA SUCCESS")
+    print("STEP E")
 
     output = []
 
