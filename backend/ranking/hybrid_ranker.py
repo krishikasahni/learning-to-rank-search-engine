@@ -18,9 +18,9 @@ def hybrid_rank(query):
         content = item["content"]
         bm25_score = item["bm25_score"]
 
-        click_score = 0
+        click_score = get_click_score(query,content.split(".")[0])
 
-        ml_score = 0
+        ml_score = predict_rank_score(query,content.split(".")[0])
 
         hybrid_score = (
             0.6 * bm25_score
@@ -29,7 +29,7 @@ def hybrid_rank(query):
         )
 
         ranked_results.append({
-            "title": "Search Result",
+            "title": content.split(".")[0],
             "content": content,
             "bm25_score": round(bm25_score, 4),
             "click_score": round(click_score, 4),

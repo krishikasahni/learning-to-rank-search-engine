@@ -39,11 +39,13 @@ CLICK_SCORES = load_click_scores()
 
 def get_click_score(query, title):
 
+    click_scores = load_click_scores()
+
     title = title.lower()
 
     score = 0
 
-    for (saved_query, saved_title), clicks in CLICK_SCORES.items():
+    for (saved_query, saved_title), clicks in click_scores.items():
 
         if saved_title == title:
             score += clicks
