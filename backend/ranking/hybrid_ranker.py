@@ -10,6 +10,8 @@ def hybrid_rank(query):
 
     from search.semantic_search import semantic_search
 
+    print("BEFORE SEMANTIC")
+
     semantic_results = semantic_search(query)
 
     print("SEMANTIC DONE")
@@ -22,21 +24,21 @@ def hybrid_rank(query):
 
     for item in bm25_results:
 
-        title = item["title"]
-        content = item["content"]
-
-        bm25_score = item["bm25_score"]
+        print("PROCESSING:", item["title"])
 
         click_score = get_click_score(
             query,
-            title
+            item["title"]
         )
+
+        print("CLICK DONE")
 
         ml_score = predict_rank_score(
             query,
-            title
+            item["title"]
         )
 
+        print("ML DONE")
         hybrid_score = (
             0.6 * bm25_score
             + 0.2 * click_score
