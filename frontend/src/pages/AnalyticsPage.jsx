@@ -83,7 +83,7 @@ fontFamily: "Arial",
         backgroundColor: "#eef2ff",
       }}
     >
-      <h3>Total Queries</h3>
+      <h3>Total Top Queries</h3>
 
       <h2>
         <h2>
