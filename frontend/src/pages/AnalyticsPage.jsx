@@ -19,12 +19,20 @@ top_clicked_docs: {},
 const API_URL = "https://learning-to-rank-search-engine.onrender.com";
 
 useEffect(() => {
-fetch(`${API_URL}/analytics`)
-.then((res) => res.json())
-.then((data) => setAnalytics(data))
-.catch((err) =>
-console.error(err)
-);
+
+  const loadAnalytics = () => {
+
+    fetch(
+      `${API_URL}/analytics?t=${Date.now()}`
+    )
+      .then((res) => res.json())
+      .then((data) => setAnalytics(data))
+      .catch(console.error);
+
+  };
+
+  loadAnalytics();
+
 }, []);
 
 const queryData = Object.entries(
@@ -74,7 +82,12 @@ fontFamily: "Arial",
       <h3>Total Queries</h3>
 
       <h2>
-        {queryData.length}
+      {
+        queryData.reduce(
+          (sum, item) => sum + item.count,
+          0
+        )
+      }
       </h2>
     </div>
 
@@ -91,7 +104,14 @@ fontFamily: "Arial",
         Clicked Documents
       </h3>
 
-      <h2>{docData.length}</h2>
+      <h2>
+      {
+        docData.reduce(
+          (sum, item) => sum + item.clicks,
+          0
+        )
+      }
+      </h2>
     </div>
   </div>
 
