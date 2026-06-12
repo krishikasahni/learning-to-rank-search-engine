@@ -41,13 +41,16 @@ The final ranking score is generated using a hybrid approach that combines all s
 ## 📷 Screenshots
 
 ### Home Page with Search Interface and Autocomplete Suggestions
-<img src="screenshots/home.png" width="900"/>
+<img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 19 34 AM" src="https://github.com/user-attachments/assets/5b6965a4-19ba-4563-bbbb-a9de514c0518" />
+
 
 ### Hybrid Ranking Results
-<img src="screenshots/search.png" width="900"/>
+<img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 19 54 AM" src="https://github.com/user-attachments/assets/6c20ed9d-b008-4e8c-b608-c9030bad0ada" />
 
 ### Analytics Dashboard
-<img src="screenshots/analytics.png" width="900"/>
+<img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 20 10 AM" src="https://github.com/user-attachments/assets/591c900d-f6fb-4b68-8d07-900ea4358f6b" />
+
+<img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 20 26 AM" src="https://github.com/user-attachments/assets/1f718b31-cda8-4764-af3e-fea87d39668d" />
 
 ### FastAPI API Documentation
 <img src="screenshots/api.png" width="900"/>
