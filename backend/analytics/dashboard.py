@@ -14,17 +14,21 @@ def get_top_queries():
             names=["timestamp", "query"]
         )
 
-        return (
-            df["query"]
-            .value_counts()
-            .head(10)
-            .to_dict()
-        )
+        return {
+            "total_queries": len(df),
+            "top_queries":
+                df["query"]
+                .value_counts()
+                .head(10)
+                .to_dict()
+        }
 
     except Exception:
 
-        return {}
-
+        return {
+            "total_queries": 0,
+            "top_queries": {}
+        }
 
 def get_top_clicked_docs():
 

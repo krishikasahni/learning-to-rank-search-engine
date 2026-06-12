@@ -109,9 +109,16 @@ def autocomplete(q: str):
 
 @app.get("/analytics")
 def analytics():
-    return {
-        "top_queries": get_top_queries(),
-        "top_clicked_docs": get_top_clicked_docs()
-    }
 
-print("STEP 16")
+    query_data = get_top_queries()
+
+    return {
+        "total_queries":
+            query_data["total_queries"],
+
+        "top_queries":
+            query_data["top_queries"],
+
+        "top_clicked_docs":
+            get_top_clicked_docs()
+    }

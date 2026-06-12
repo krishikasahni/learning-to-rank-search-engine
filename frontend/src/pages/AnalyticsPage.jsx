@@ -13,10 +13,10 @@ ResponsiveContainer,
 function AnalyticsPage() {
 
 const [analytics, setAnalytics] = useState({
-top_queries: {},
-top_clicked_docs: {},
+  total_queries: 0,
+  top_queries: {},
+  top_clicked_docs: {},
 });
-
 const API_URL =
 "https://learning-to-rank-search-engine.onrender.com";
 
@@ -86,13 +86,9 @@ fontFamily: "Arial",
       <h3>Total Queries</h3>
 
       <h2>
-        {
-          queryData.reduce(
-            (sum, item) =>
-              sum + item.count,
-            0
-          )
-        }
+        <h2>
+	  {analytics.total_queries || 0}
+	</h2>
       </h2>
     </div>
 
