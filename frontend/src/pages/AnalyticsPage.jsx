@@ -22,7 +22,6 @@ const API_URL =
 
 useEffect(() => {
 
-```
 const loadAnalytics = () => {
 
   fetch(
@@ -35,7 +34,6 @@ const loadAnalytics = () => {
 };
 
 loadAnalytics();
-```
 
 }, []);
 
@@ -66,8 +64,6 @@ fontFamily: "Arial",
 }}
 > <h1>
 📊 Search Analytics Dashboard </h1>
-
-```
   <div
     style={{
       display: "flex",
@@ -210,7 +206,6 @@ fontFamily: "Arial",
     </ResponsiveContainer>
   </div>
 </div>
-```
 
 );
 }
