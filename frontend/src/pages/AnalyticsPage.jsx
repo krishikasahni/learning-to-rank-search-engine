@@ -11,27 +11,31 @@ ResponsiveContainer,
 } from "recharts";
 
 function AnalyticsPage() {
+
 const [analytics, setAnalytics] = useState({
 top_queries: {},
 top_clicked_docs: {},
 });
 
-const API_URL = "https://learning-to-rank-search-engine.onrender.com";
+const API_URL =
+"https://learning-to-rank-search-engine.onrender.com";
 
 useEffect(() => {
 
-  const loadAnalytics = () => {
+```
+const loadAnalytics = () => {
 
-    fetch(
-      `${API_URL}/analytics?t=${Date.now()}`
-    )
-      .then((res) => res.json())
-      .then((data) => setAnalytics(data))
-      .catch(console.error);
+  fetch(
+    `${API_URL}/analytics?t=${Date.now()}`
+  )
+    .then((res) => res.json())
+    .then((data) => setAnalytics(data))
+    .catch(console.error);
 
-  };
+};
 
-  loadAnalytics();
+loadAnalytics();
+```
 
 }, []);
 
@@ -46,9 +50,8 @@ const docData = Object.entries(
 analytics.top_clicked_docs
 ).map(([title, clicks]) => ({
 title:
-title.length > 25
-? title.substring(0, 25) +
-"..."
+title.length > 20
+? title.substring(0, 20) + "..."
 : title,
 clicks,
 }));
@@ -63,6 +66,8 @@ fontFamily: "Arial",
 }}
 > <h1>
 📊 Search Analytics Dashboard </h1>
+
+```
   <div
     style={{
       display: "flex",
@@ -75,19 +80,19 @@ fontFamily: "Arial",
         flex: 1,
         padding: "20px",
         borderRadius: "12px",
-        backgroundColor:
-          "#eef2ff",
+        backgroundColor: "#eef2ff",
       }}
     >
       <h3>Total Queries</h3>
 
       <h2>
-      {
-        queryData.reduce(
-          (sum, item) => sum + item.count,
-          0
-        )
-      }
+        {
+          queryData.reduce(
+            (sum, item) =>
+              sum + item.count,
+            0
+          )
+        }
       </h2>
     </div>
 
@@ -96,8 +101,7 @@ fontFamily: "Arial",
         flex: 1,
         padding: "20px",
         borderRadius: "12px",
-        backgroundColor:
-          "#f0fdf4",
+        backgroundColor: "#f0fdf4",
       }}
     >
       <h3>
@@ -105,12 +109,13 @@ fontFamily: "Arial",
       </h3>
 
       <h2>
-      {
-        docData.reduce(
-          (sum, item) => sum + item.clicks,
-          0
-        )
-      }
+        {
+          docData.reduce(
+            (sum, item) =>
+              sum + item.clicks,
+            0
+          )
+        }
       </h2>
     </div>
   </div>
@@ -129,7 +134,7 @@ fontFamily: "Arial",
 
     <ResponsiveContainer
       width="100%"
-      height={300}
+      height={350}
     >
       <BarChart
         data={queryData}
@@ -137,12 +142,15 @@ fontFamily: "Arial",
         <CartesianGrid strokeDasharray="3 3" />
 
         <XAxis
-  	  dataKey="query"
-  	  angle={-25}
-  	  textAnchor="end"
-  	  interval={0}
-  	  height={80}
-	/>
+          dataKey="query"
+          angle={-30}
+          textAnchor="end"
+          interval={0}
+          height={100}
+          tick={{
+            fontSize: 12,
+          }}
+        />
 
         <YAxis />
 
@@ -170,23 +178,32 @@ fontFamily: "Arial",
 
     <ResponsiveContainer
       width="100%"
-      height={400}
+      height={500}
     >
       <BarChart
-  	layout="vertical"
-  	data={docData}
+        layout="vertical"
+        data={docData}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 120,
+          bottom: 20,
+        }}
       >
         <CartesianGrid strokeDasharray="3 3" />
 
         <XAxis
-  	   dataKey="title"
-  	   angle={-25}
-  	   textAnchor="end"
-  	   interval={0}
-  	   height={80}
-	/>
+          type="number"
+        />
 
-        <YAxis />
+        <YAxis
+          type="category"
+          dataKey="title"
+          width={220}
+          tick={{
+            fontSize: 12,
+          }}
+        />
 
         <Tooltip />
 
@@ -197,6 +214,7 @@ fontFamily: "Arial",
     </ResponsiveContainer>
   </div>
 </div>
+```
 
 );
 }
