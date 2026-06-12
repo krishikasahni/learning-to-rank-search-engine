@@ -136,7 +136,13 @@ fontFamily: "Arial",
       >
         <CartesianGrid strokeDasharray="3 3" />
 
-        <XAxis dataKey="query" />
+        <XAxis
+  	  dataKey="query"
+  	  angle={-25}
+  	  textAnchor="end"
+  	  interval={0}
+  	  height={80}
+	/>
 
         <YAxis />
 
@@ -167,11 +173,18 @@ fontFamily: "Arial",
       height={400}
     >
       <BarChart
-        data={docData}
+  	layout="vertical"
+  	data={docData}
       >
         <CartesianGrid strokeDasharray="3 3" />
 
-        <XAxis dataKey="title" />
+        <XAxis
+  	   dataKey="title"
+  	   angle={-25}
+  	   textAnchor="end"
+  	   interval={0}
+  	   height={80}
+	/>
 
         <YAxis />
 
