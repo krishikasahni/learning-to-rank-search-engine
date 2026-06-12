@@ -53,7 +53,7 @@ The final ranking score is generated using a hybrid approach that combines all s
 <img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 20 26 AM" src="https://github.com/user-attachments/assets/1f718b31-cda8-4764-af3e-fea87d39668d" />
 
 ### FastAPI API Documentation
-<img src="screenshots/api.png" width="900"/>
+<img width="1440" height="900" alt="Screenshot 2026-06-13 at 2 20 59 AM" src="https://github.com/user-attachments/assets/1d55ced5-2b90-4b70-8415-b68b6fd6d3d2" />
 
 ## Hybrid Ranking Formula
 
